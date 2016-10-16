@@ -1,5 +1,7 @@
-# Requires the Gemfile
+
 require 'bundler' ; Bundler.require
+require 'sinatra'
+configure { set :server, :puma }
 
 # By default Sinatra will return the string as the response.
 get '/hello-world' do

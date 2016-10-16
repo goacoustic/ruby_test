@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    puma (3.6.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -15,6 +16,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  puma
   rake
   sinatra
 
