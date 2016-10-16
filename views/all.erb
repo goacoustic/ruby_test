@@ -1,0 +1,8 @@
+<h3>All</h3>
+<ul>
+<% @messages.each do |message| %>
+	<li>
+		<%= message.text %> <%= message.id %> 
+	</li>
+<% end %>
+</ul>
