@@ -7,3 +7,7 @@ configure { set :server, :puma }
 get '/hello-world' do
   "Hello World!"
 end
+
+get '/' do
+  erb :index
+end
