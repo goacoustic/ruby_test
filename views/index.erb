@@ -29,8 +29,23 @@
 		<div>
 		  <input type="password" id="password" placeholder="Type password">
 		  <button id="submit" type="button" class="btn btn-primary">Create message</button>
+
+			<div id="response-message"></div>
 		<div>
 	</form>
 </body>
+<script>
+ const postMessage = () => {
+	 $.post('/message', {
+		 text: $('#text').val()
+	 })
+	 .done(resp => {
+		 $('#text').val('');
+		 $('#response-message').text(resp);
+		 console.log(resp);
+ 	});
+ };
 
+$('#submit').click(postMessage);
+</script>
 </html>
