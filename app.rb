@@ -12,10 +12,10 @@ configure { set :server, :puma }
 post '/message' do
   text = params[:text]
   id = SecureRandom.hex
-  message = Message.new(text: text, id: id)
+  @message = Message.new(text: text, id: id)
 
   content_type :json
-  { :link => "https://google.com/#{id}", :text => text, :success => message.save }.to_json
+  { :link => "https://google.com/#{id}", :text => text, :success => @message.save }.to_json
 end
 
 get '/' do

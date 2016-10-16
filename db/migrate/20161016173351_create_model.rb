@@ -1,11 +1,11 @@
 class CreateModel < ActiveRecord::Migration[5.0]
    def up
-  	create_table :models do |t|
+  	create_table :messages do |t|
   		t.string :name
   	end
   end
 
   def down
-  	drop_table :models
+  	drop_table :messages
   end
 end
