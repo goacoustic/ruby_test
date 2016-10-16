@@ -9,7 +9,7 @@ post '/message' do
   text = params[:text]
 
   content_type :json
-  { :url => 'https://google.com', :key2 => text }.to_json
+  { :link => 'https://google.com', :text => text }.to_json
 end
 
 get '/' do
