@@ -15,7 +15,7 @@ post '/message' do
   @message = Message.new(text: text, id: id)
 
   content_type :json
-  { :link => "https://google.com/#{id}", :text => text, :success => @message.save }.to_json
+  { :link => "#{WEBAPP}/#{id}", :text => text, :success => @message.save }.to_json
 end
 
 get '/' do
@@ -25,4 +25,15 @@ end
 get '/all' do
   @messages = Message.all
   erb :all
+end
+
+get '/message/:id' do
+  @message = Message.find_by_id(params[:id])
+
+  if @message
+    @message.destroy
+    erb :message
+  else
+    halt 404, "Not found"
+  end
 end

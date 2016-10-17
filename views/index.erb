@@ -42,7 +42,7 @@
 	</form>
 
 	<span id="response-block" class="label label-important hidden">
-	  Generated link: <a href="#" id="response-link"></a> will be awailable untill first visit.
+	  Generated link: <a id="response-link"></a> will be available until first visit.
 	</span>
 	
 </body>
@@ -54,7 +54,7 @@
 	 .done(resp => {
 		 $('#text').val('');
 		 $('#response-block').removeClass('hidden');
-		 $('#response-link').text(resp.link);
+		 $('#response-link').text(resp.link).attr("href", resp.link);
  	});
  };
 
