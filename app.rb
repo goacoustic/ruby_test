@@ -6,8 +6,9 @@ require 'sinatra/activerecord'
 require './config/environments'
 require './models/message'
 require 'securerandom'
+require "sinatra/config_file"
 
-configure { set :server, :puma }
+config_file './config/app.yml'
 
 post '/message' do
   text = params[:text]
@@ -15,7 +16,7 @@ post '/message' do
   @message = Message.new(text: text, id: id)
 
   content_type :json
-  { :link => "#{WEBAPP}/#{id}", :text => text, :success => @message.save }.to_json
+  { :link => "#{settings.webapp}/#{id}", :text => text, :success => @message.save }.to_json
 end
 
 get '/' do
