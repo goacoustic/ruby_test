@@ -1,12 +1,14 @@
 
 require 'bundler' ; Bundler.require
 require 'sinatra'
-require 'json'
 require 'sinatra/activerecord'
+require 'sinatra/base'
+require 'sinatra/config_file'
 require './config/environments'
 require './models/message'
+require 'json'
 require 'securerandom'
-require "sinatra/config_file"
+
 
 config_file './config/app.yml'
 
