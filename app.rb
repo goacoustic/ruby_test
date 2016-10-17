@@ -18,7 +18,7 @@ post '/message' do
   @message = Message.new(text: text, id: id)
 
   content_type :json
-  { :link => "#{settings.webapp}/#{id}", :text => text, :success => @message.save }.to_json
+  { :link => "#{settings.webapp}/message/#{id}", :text => text, :success => @message.save }.to_json
 end
 
 get '/' do
