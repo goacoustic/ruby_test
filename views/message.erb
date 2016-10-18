@@ -1,6 +1,6 @@
 <h2>It was</h2>
 <div>
-	<h3><%= @message.text %></h3>, but now it's gone!
+	<h3><%= @model.decryptedText %></h3>, but now it's gone!
 </div>
 
-<%= link_to 'Back', @settings.webapp %>
+<%= link_to 'Back', @model.webapp %>

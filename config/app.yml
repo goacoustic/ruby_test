@@ -1,2 +1,3 @@
 webapp: 'https://rubytestsonyaisanoob.herokuapp.com'
 server: puma
+cryptoKey: 'somesecretkey'
