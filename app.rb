@@ -38,8 +38,7 @@ get '/message/:id' do
     decryptedText = Crypt.decrypt(message.text, settings.cryptoKey)
     message.destroy
 
-    @model = { 'wepapp' => settings.webapp, 'decryptedText' => decryptedText }
-    erb :message
+    erb :message, :locals => { :wepapp => settings.webapp, :decryptedText => decryptedText }
   else
     halt 404, "Not found"
   end
